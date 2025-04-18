@@ -1,0 +1,2 @@
+net.yassir.dao.DaoImpl
+net.yassir.metier.MetierImpl
