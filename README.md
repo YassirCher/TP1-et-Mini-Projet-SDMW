@@ -1,4 +1,5 @@
-Résumé exécutif
+Résumé exécutif:
+
 Ce mini‑framework Java illustre la mise en œuvre des principes d’Inversion de Contrôle (IoC) et d’Injection de Dépendances (DI) via deux modes de configuration :
 
 XML (fichier beans.xml parsé avec JAXB)
@@ -15,6 +16,21 @@ Ce projet vise à reproduire ces mécanismes de manière minimaliste :
 
 1. Configuration XML avec JAXB (Java Architecture for XML Binding)
 2. Configuration Annotations selon JSR‑330 (@Inject)
+
+Architecture des Beans
+Chaque bean est défini par un BeanDefinition contenant :
+- Un identifiant unique (id)
+- Une classe (className)
+- Des arguments de constructeur (constructor-arg)
+- Des propriétés à injecter (property)
+Le XmlApplicationContext lit beans.xml via JAXB, créé les instances, injecte par constructeur, setter ou champ, puis appelle init-method si défini.
+Structure des Packages net.yassir
+net.yassir.context : XmlApplicationContext et AnnotationApplicationContext
+net.yassir.annotation : @Component, @Inject, @PostConstruct
+net.yassir.dao : IDao, DaoImpl (retourne une donnée fixe)
+net.yassir.metier : IMetier et implémentations (setter, constructor, field)
+net.yassir.presentation : classes main pour tester chaque mode d’injection
+
 
 2) Configuration XML
 1. Fichier beans.xml
