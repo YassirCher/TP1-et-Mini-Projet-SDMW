@@ -9,6 +9,7 @@ Annotations (@Component, @Inject, @PostConstruct scannées dynamiquement avec Re
 L’objectif pédagogique est de comprendre comment décrire, instancier et relier des composants Java sans « new » explicite, en s’inspirant du conteneur Spring IoC. 
 
 1) Contexte et objectifs
+   
 L’Inversion de Contrôle confie au conteneur la création et la gestion des objets d’une application, améliorant la maintenabilité et la testabilité 
 
 L’Injection de Dépendances (DI) est un pattern permettant d’injecter automatiquement les dépendances d’un objet, soit via le constructeur, soit via un setter, soit directement sur le champ
@@ -32,7 +33,8 @@ net.yassir.metier : IMetier et implémentations (setter, constructor, field)
 net.yassir.presentation : classes main pour tester chaque mode d’injection
 
 
-2) Configuration XML
+2) Configuration XML :
+   
 1. Fichier beans.xml
 
 Déclare les <bean id="..." class="...">
@@ -54,7 +56,8 @@ Field‑injection en fallback si pas de setter
 
 Appel d’une méthode sans paramètre après injection comme Spring OXM
 
-3) Configuration par annotations
+3) Configuration par annotations :
+   
 Scan de classes
 
 1. Utilisation du library Reflections pour détecter @Component dans le package racine
@@ -73,7 +76,8 @@ Setter‑injection : toutes les méthodes @Inject à un paramètre
 
 Exécution des méthodes @PostConstruct
 
-4) Architecture du projet
+4) Architecture du projet :
+   
 net.yassir.dao
 
 IDao et DaoImpl (retourne une valeur fixe, e.g. 42)
@@ -96,18 +100,23 @@ net.yassir.presentation
 
 Points d’entrée main pour chaque mode d’injection
 
-5) Résultats et captures d’écran
+5) Résultats et captures d’écran :
+
+   
 5.1 XML:
 
 pour les fichiers xml le traitement se fait via le fichier XmlAppliquationContext.java 
 voici le resultat de l'injection a travers le fichier xml de configuration(beans.xml) on on recupere le resultat a partir des setters de MetierImpl3.java: 
 ![image](https://github.com/user-attachments/assets/488b80a9-7c85-43b8-8199-19c3c135aae9)
+
 voici le resultat de l'injection a travers le fichier xml de configuration(beans.xml) on on recupere le resultat a partir du constructeur de MetierImpl2.java: 
 ![image](https://github.com/user-attachments/assets/215ff394-7896-4432-943e-416cd681e3e4)
+
 voici le resultat de l'injection a travers le fichier xml de configuration(beans.xml), l'injection se fera par accès direct au champ MetierImpl3.java: 
 ![image](https://github.com/user-attachments/assets/72b4dbdd-55be-40ee-a00f-9038385471e1)
 
 5.2 Annotations:
+
 injection directe via attribu: 
 ![image](https://github.com/user-attachments/assets/0db4f45d-958f-48bc-9342-73470bd9bf75)
 
@@ -117,7 +126,8 @@ injection via contructeur:
 injection via setter: 
 ![image](https://github.com/user-attachments/assets/059650c1-e8ca-411d-b34b-22f6eb10254a)
 
-6) Conclusion
+6) Conclusion :
+   
 Ce mini projet sert de base pédagogique pour comprendre les principes fondamentaux de l’inversion de contrôle, de l’injection de dépendances et du traitement de configurations XML et annotations en Java.
 il offre un laboratoire pratique pour :
 
