@@ -1,3 +1,9 @@
+******
+Accès au mini-projet : problème technique:
+Je viens de constater que le dossier du mini-projet n'est pas accessible. Honnêtement, je ne sais pas pourquoi. Voici le lien qui contient uniquement le mini-projet :
+https://github.com/YassirCher/SDMW-TP1-Mini-Projet
+******
+
 Résumé exécutif:
 
 Ce mini‑framework Java illustre la mise en œuvre des principes d’Inversion de Contrôle (IoC) et d’Injection de Dépendances (DI) via deux modes de configuration :
